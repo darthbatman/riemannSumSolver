@@ -11,7 +11,7 @@ prompt.get(['function', 'lowerBound', 'upperBound', 'riemannSumType', 'step'], f
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
       console.log(pluggedInFunction);
       console.log(math.eval(pluggedInFunction));
-      sum += math.eval(pluggedInFunction);
+      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
     }
   }
   else if (result.riemannSumType == 'right'){
@@ -19,7 +19,7 @@ prompt.get(['function', 'lowerBound', 'upperBound', 'riemannSumType', 'step'], f
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
       console.log(pluggedInFunction);
       console.log(math.eval(pluggedInFunction));
-      sum += math.eval(pluggedInFunction);
+      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
     }
   }
   else {
@@ -27,7 +27,7 @@ prompt.get(['function', 'lowerBound', 'upperBound', 'riemannSumType', 'step'], f
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
       console.log(pluggedInFunction);
       console.log(math.eval(pluggedInFunction));
-      sum += math.eval(pluggedInFunction);
+      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
     }
   }
   console.log('Sum: ' + sum);
