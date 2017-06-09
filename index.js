@@ -7,27 +7,27 @@ prompt.get(['function', 'lowerBound', 'upperBound', 'riemannSumType', 'step'], f
   console.log('Function: ' + result.function);
   var sum = 0;
   if (result.riemannSumType == 'left'){
-    for (var i = parseInt(result.lowerBound); i < parseInt(result.upperBound); i+=parseInt(result.step)){
+    for (var i = parseFloat(result.lowerBound); i < parseFloat(result.upperBound); i+=parseFloat(result.step)){
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
-      console.log(pluggedInFunction);
-      console.log(math.eval(pluggedInFunction));
-      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
+      // console.log(pluggedInFunction);
+      // console.log(math.eval(pluggedInFunction));
+      sum += (math.eval(pluggedInFunction) * parseFloat(result.step));
     }
   }
   else if (result.riemannSumType == 'right'){
-    for (var i = parseInt(result.lowerBound) + parseInt(result.step); i <= parseInt(result.upperBound); i+=parseInt(result.step)){
+    for (var i = parseFloat(result.lowerBound) + parseFloat(result.step); i <= parseFloat(result.upperBound); i+=parseFloat(result.step)){
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
-      console.log(pluggedInFunction);
-      console.log(math.eval(pluggedInFunction));
-      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
+      // console.log(pluggedInFunction);
+      // console.log(math.eval(pluggedInFunction));
+      sum += (math.eval(pluggedInFunction) * parseFloat(result.step));
     }
   }
   else {
-    for (var i = parseInt(result.lowerBound) + (parseInt(result.step)/2); i <= parseInt(result.upperBound); i+=parseInt(result.step)){
+    for (var i = parseFloat(result.lowerBound) + (parseFloat(result.step)/2); i <= parseFloat(result.upperBound); i+=parseFloat(result.step)){
       var pluggedInFunction = result.function.replace(/x/g, i.toString());
-      console.log(pluggedInFunction);
-      console.log(math.eval(pluggedInFunction));
-      sum += (math.eval(pluggedInFunction) * parseInt(result.step));
+      // console.log(pluggedInFunction);
+      // console.log(math.eval(pluggedInFunction));
+      sum += (math.eval(pluggedInFunction) * parseFloat(result.step));
     }
   }
   console.log('Sum: ' + sum);
